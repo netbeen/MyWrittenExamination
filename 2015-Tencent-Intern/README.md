@@ -6,10 +6,10 @@ B. 图的存储结构可以用数组来表示
 C. 在实际应用中适宜采用多重链表来表示图的存储结构  
 D. 对于无向图来说，可以用邻接多重链表来存储  
 2. 下面哪些按钮标签能够让用户点击后直接提交表单？（）  
-A. <input type="submit" />  
-B. <input type="image" />  
-C. <input type="button" />  
-D. <input />  
+A. \<input type="submit" />  
+B. \<input type="image" />  
+C. \<input type="button" />  
+D. \<input />  
 
 
 ## 简答题
