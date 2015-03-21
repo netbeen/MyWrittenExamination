@@ -13,7 +13,7 @@ C. \<input type="button" />
 D. \<input />  
 
 3. 请问下面代码的输出是什么？（）  
-```
+```C++
 class A{
 public:
 	~A(){
