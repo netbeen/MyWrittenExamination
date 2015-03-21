@@ -46,7 +46,7 @@ B. malloc在分配内存时必须按给出的字节分配
 C. new可以按照对象的大小自动分配，并且能调用构造函数  
 D. new分配内存时，还会在实际内存快的前后加上附加信息，所以new使用的内存大小比malloc多  
 
-6\. 若数据元素序列10，11，12，5，6，7，20，2，3是采用下列排序方法之一得到的第二趟排序后的结果，则该排序算法只能是（）。
+6\. 若数据元素序列10，11，12，5，6，7，20，2，3是采用下列排序方法之一得到的第二趟排序后的结果，则该排序算法只能是（）。  
 A. 冒泡排序  
 B. 选择排序  
 C. 二路归并排序  
@@ -69,6 +69,53 @@ int main(a=int argc, char *argv[]){
 	return 0;
 }
 ```
-\8. 
+8\. 用二分法查找一个长度为20的，排好序的线性表，查找不成功时，最多需要比较多少次（）
+A. 5  
+B. 7  
+C. 4  
+D. 6  
+
+9\. 应用层DNS协议主要用于实现（）网络服务功能。
+A. IP地址到网络设备名字的映射  
+B. IP地址到网络硬件地址的映射  
+C. 网络设备名字到IP地址的映射  
+D. 网络硬件地址到IP地址的映射
+
+10\. 在MVC模式中，进行业务流程/状态处理以及业务规则制定的是（）。
+A. Model  
+B. Manager  
+C. View  
+D. Controller  
+
+11\. 下面程序的输出结果是（）。
+```C++
+class Base{
+public:
+	Base(int i){cout << i;}
+	~Base(){}
+};
+class Base1 : virtual public Base{
+public:
+	Base1(int i, int j = 0) : Base(j){cout << i;}
+	~Base1(){}
+};
+class Base2 : virtual public Base{
+public:
+	Base2(int i, int j = 0) : Base(j){cout << i;}
+	~Base2(){}
+}
+class Derived : public Base2, public Base1{
+public:
+	Derived(int a, int b, int c, int d) : mem1(a), mem2(b), Base1(c), Base2(d), Base(a){cout << b;}
+private:
+	Base2 mem2;
+	Base1 mem1;
+};
+void main(){
+	Derived objD(1,2,3,4);
+}
+
+```
+
 
 ## 简答题
