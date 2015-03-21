@@ -16,21 +16,15 @@ D. \<input />
 ```C++
 class A{
 public:
-	~A(){
-		printf("A");
-	}
+	~A(){ printf("A"); }
 };
 class B{
 public:
-	~B(){
-		print("B");	
-	}
+	~B(){ print("B"); }
 }
 class C : public A{
 public:
-	~C(){
-		printf("C");
-	}
+	~C(){ printf("C"); }
 private:
 	B _b;
 };
@@ -40,5 +34,41 @@ int main(){
 }
 ```
 
+4. 关于动态库和静态库，以下说法正确的是（）。  
+A. 静态链接库在编译以后包含在可执行文件中，不会以单独文件的形式存在  
+B. 动态链接库是以单独文件的形式存在，被程序外部调用  
+C. 动态链接库的好处就是可以多个进程访问一个动态链接库  
+D. 动态链接库共享一块内存，静态则包含在程序中，不能被外部调用
+
+5. 关于malloc和new，以下说法正确的是（）。  
+A. new是C++的关键字  
+B. malloc在分配内存时必须按给出的字节分配  
+C. new可以按照对象的大小自动分配，并且能调用构造函数  
+D. new分配内存时，还会在实际内存快的前后加上附加信息，所以new使用的内存大小比malloc多  
+
+6. 若数据元素序列10，11，12，5，6，7，20，2，3是采用下列排序方法之一得到的第二趟排序后的结果，则该排序算法只能是（）。
+A. 冒泡排序  
+B. 选择排序  
+C. 二路归并排序  
+D. 插入排序  
+
+7. 程序输出的结果是（）。  
+```C++
+typedef struct_A{
+	char a;
+	int b;
+	float c;
+	double d;
+	int *pa;
+	char *pc;
+	short e;
+}A;
+#pragma pack(pop)
+int main(a=int argc, char *argv[]){
+	printf("size=%d\n",sizeof(A));
+	return 0;
+}
+```
+8. 
 
 ## 简答题
