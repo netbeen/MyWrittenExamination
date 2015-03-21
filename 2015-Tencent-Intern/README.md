@@ -20,6 +20,24 @@ public:
 		printf("A");
 	}
 };
+class B{
+public:
+	~B(){
+		print("B");	
+	}
+}
+class C : public A{
+public:
+	~C(){
+		printf("C");
+	}
+private:
+	B _b;
+};
+int main(){
+	C c;
+	return 0;
+}
 ```
 
 
