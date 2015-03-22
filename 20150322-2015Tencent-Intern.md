@@ -54,7 +54,7 @@ D. 插入排序
 
 7\. 程序输出的结果是（）。  
 ```C++
-typedef struct_A{
+typedef struct _A{
 	char a;
 	int b;
 	float c;
@@ -64,7 +64,7 @@ typedef struct_A{
 	short e;
 }A;
 #pragma pack(pop)
-int main(a=int argc, char *argv[]){
+int main(int argc, char *argv[]){
 	printf("size=%d\n",sizeof(A));
 	return 0;
 }
