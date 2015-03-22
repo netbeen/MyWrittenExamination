@@ -39,7 +39,7 @@ D. **插入排序**：![Insert Sorting](http://ww2.sinaimg.cn/large/9e2d8c2djw1e
 本题中由于只有一句单飞的#pragma pack(pop)，因此可以它是无效的，忽略。
 <table>
 	<tr><th>地址</th><th>32位</th><th></th><th>64位</th><th>地址</th></tr>
-	<tr><td>0</td><td>char a</td><td></td><td>char a</td><td>3</td></tr>
+	<tr><td>0</td><td>char a (1Byte)</td><td></td><td>char a (1Byte)</td><td>3</td></tr>
 	<tr><td>4</td><td>int b</td><td></td><td>int b</td><td>7</td></tr>
 	<tr><td>8</td><td>float c</td><td></td><td>float c</td><td>11</td></tr>
 	<tr><td>12</td><td>留作对齐</td><td></td><td>留作对齐</td><td>15</td></tr>
@@ -47,9 +47,9 @@ D. **插入排序**：![Insert Sorting](http://ww2.sinaimg.cn/large/9e2d8c2djw1e
 	<tr><td>20</td><td>double d</td><td></td><td>double d</td><td>23</td></tr>
 	<tr><td>24</td><td>int * pa</td><td></td><td>int * pa</td><td>27</td></tr>
 	<tr><td>28</td><td>char * pc</td><td></td><td>int * pa</td><td>31</td></tr>
-	<tr><td>32</td><td>short e</td><td></td><td>char * pc</td><td>35</td></tr>
+	<tr><td>32</td><td>short e (2Byte)</td><td></td><td>char * pc</td><td>35</td></tr>
 	<tr><td>36</td><td>留作对齐</td><td></td><td>char * pc</td><td>39</td></tr>
-	<tr><td>40</td><td></td><td></td><td>short e</td><td>43</td></tr>
+	<tr><td>40</td><td></td><td></td><td>short e (2Byte)</td><td>43</td></tr>
 	<tr><td>44</td><td></td><td></td><td>留作对齐</td><td>47</td></tr>
 
 
