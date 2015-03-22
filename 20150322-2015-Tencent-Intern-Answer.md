@@ -31,26 +31,15 @@ C. **二路归并排序**：（熟悉不描述）两趟以后会形成最长长�
 D. **插入排序**：![Insert Sorting](http://ww2.sinaimg.cn/large/9e2d8c2djw1eqel0075u0g208c02ygmu.gif)  
 
 7\. 程序输出的结果是（）。  
-```C++
-typedef struct _A{
-	char a;
-	int b;
-	float c;
-	double d;
-	int *pa;
-	char *pc;
-	short e;
-}A;
-#pragma pack(pop)
-int main(int argc, char *argv[]){
-	printf("size=%d\n",sizeof(A));
-	return 0;
-}
-```
-答：编译器的对齐规则的知识点。
+答：编译器的对齐规则的知识点。分清**数据类型自身对齐值**、**结构体（类）自身对齐值**、**指定对齐值**和**有效对齐值**：  
+**数据类型自身对齐值**：数据类型自身所占容量。注意64位系统指针为8字节，32位系统指针为4字节。
+**结构体（类）自身对齐值**：其成员中自身对齐值**最大**的值。
+**指定对齐值**：#pragma pack(value)来指定的对齐值,一定是2的整数幂。
+**有效对齐值**：**仅在指定对齐值生效时才生效**。有效对齐值=**自身对齐值**和**指定对齐值**中**最小**的那个。  
+本题中由于只有一句单飞的#pragma pack(pop)，因此可以它是无效的，忽略。
 <table>
-	<th></th>
-	<th></th>
+	<tr><th>32位</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+	
 <table>
 
 8\. 用二分法查找一个长度为20的，排好序的线性表，查找不成功时，最多需要比较多少次（）  
