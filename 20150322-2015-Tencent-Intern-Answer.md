@@ -49,8 +49,8 @@ D. **插入排序**：![Insert Sorting](http://ww2.sinaimg.cn/large/9e2d8c2djw1e
 	<tr><td>28</td><td>char * pc</td><td></td><td>int * pa</td></tr>
 	<tr><td>32</td><td>short e</td><td></td><td>char * pc</td></tr>
 	<tr><td>36</td><td>留作对齐</td><td></td><td>char * pc</td></tr>
-	<tr><td>40</td><td></td><td></td><td></td><td>short e</td></tr>
-	<tr><td>44</td><td></td><td></td><td></td><td>留作对齐</td></tr>
+	<tr><td>40</td><td></td><td></td><td>short e</td></tr>
+	<tr><td>44</td><td></td><td></td><td>留作对齐</td></tr>
 	<tr><td>48</td><td></td><td></td><td></td></tr>
 
 
