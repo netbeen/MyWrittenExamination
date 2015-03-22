@@ -20,7 +20,7 @@ public:
 };
 class B{
 public:
-	~B(){ print("B"); }
+	~B(){ printf("B"); }
 }
 class C : public A{
 public:
