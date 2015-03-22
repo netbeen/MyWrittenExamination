@@ -146,3 +146,39 @@ C. 运行结果不可预知
 D. 无法运行  
 
 ## 简答题
+1\. 给定若干个DNA序列（只包含ACGT四个字母），定义逆序度等于DNA中逆序对的总数，例如DNA序列AGCAGT，其逆序对有GC，GA，CA，所以该DNA序列的逆序度为3。请将DNA的逆序度的计算函数补充完整，要求时间复杂度O(n)。
+```C++
+#include <stdio.h>
+#include <string.h>
+int calc_revseq(const char * pdna, unsigned int len){
+	int sum = 0;
+	int c[4] = {0};	//c[0]-c[3]分别代表字母ACGT计数器
+	for(int i = 0; i < len; i++){
+		switch(pdna[i]){
+		case 'A':
+			_________________________;
+			_________________________;
+			break;
+		case 'C':
+			_________________________;
+			_________________________;
+			break;
+		case 'G':
+			_________________________;
+			_________________________;
+			break;
+		case 'T':
+			_________________________;
+			break;
+		default:
+			return -1;
+		};
+	}
+	return sum;
+}
+int main(int argc, char* argv[]){
+	char dna[] = "ACGGGCTACGTCAGTCAAGCTCTTAGCCCCGGTTAGAGCACGTA";
+	printf("%d\n",calc_revseq(dna,strlen(dna)));
+	return 0;
+}
+```
