@@ -66,34 +66,17 @@ D. **插入排序**：![Insert Sorting](http://ww2.sinaimg.cn/large/9e2d8c2djw1e
 **控制器**：起到不同层面间的组织作用，用于控制应用程序的流程。  
 与业务流程相关的操作应该是由Model完成。  
 
-11\. 下面程序的输出结果是（）。
-```C++
-class Base{
-public:
-	Base(int i){cout << i;}
-	~Base(){}
-};
-class Base1 : virtual public Base{
-public:
-	Base1(int i, int j = 0) : Base(j){cout << i;}
-	~Base1(){}
-};
-class Base2 : virtual public Base{
-public:
-	Base2(int i, int j = 0) : Base(j){cout << i;}
-	~Base2(){}
-};
-class Derived : public Base2, public Base1{
-public:
-	Derived(int a, int b, int c, int d) : mem1(a), mem2(b), Base1(c), Base2(d), Base(a){cout << b;}
-private:
-	Base2 mem2;
-	Base1 mem1;
-};
-void main(){
-	Derived objD(1,2,3,4);
-}
-```
+11\. 下面程序的输出结果是（）。**14302012**
+答：**C++菱形继承（虚继承）**的知识点。菱形继承执行三部曲：  
+1. 构造虚基类。  
+2. 按照派生类继承顺序构造派生类，其对虚基类的构造函数的调用被忽略。  
+3. 按照派生类的声明顺序调用对象**所属派生类的虚基类的构造函数**、**所属派生类的构造函数**。
+C++标准规定，由**最派生类**直接初始化**虚基类**。因此，对间接继承了虚基类的类，也必须能直接访问其虚继承来的祖先类，也即应知道其虚继承来的祖先类的地址偏移值。
+本题，Base是Base1的虚基类，Base也是Base2的虚基类。实践三部曲：  
+1. 构造虚基类，执行初始化列表中的Base(a)，输出1。
+2. Derived类先继承Base2，后继承Base1,因此先执行Base2(d)，再执行Base1(c)。输出43。
+3. Derived类先声明Base2 mem2，后声明Base1 mem1。因此先执行Base2 mem2(b)，输出02。后执行Base1 mem1(a)，输出01。
+4. 对象和成员变量初始化全部完毕，执行构造函数函数体，输出2.
 
 12\. 关于递归，说法正确的是（）。  
 A. 递归函数是一个直接调用自己或通过一系列的调用语句间接地调用自己的函数  
