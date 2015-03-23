@@ -38,19 +38,19 @@ D. **插入排序**：![Insert Sorting](http://ww2.sinaimg.cn/large/9e2d8c2djw1e
 **有效对齐值**：**仅在指定对齐值生效时才生效**。有效对齐值=**自身对齐值**和**指定对齐值**中**最小**的那个。  
 本题中由于只有一句单飞的#pragma pack(pop)，因此可以它是无效的，本题无指定对齐值，结构体自身对齐值为8。
 <table>
-	<tr><th>地址</th><th>32位</th><th></th><th>64位</th><th>地址</th></tr>
-	<tr><td>0</td><td>char a (1 Byte)</td><td></td><td>char a (1 Byte)</td><td>3</td></tr>
-	<tr><td>4</td><td>int b</td><td></td><td>int b</td><td>7</td></tr>
-	<tr><td>8</td><td>float c</td><td></td><td>float c</td><td>11</td></tr>
-	<tr><td>12</td><td>留作对齐</td><td></td><td>留作对齐</td><td>15</td></tr>
-	<tr><td>16</td><td>double d</td><td></td><td>double d</td><td>19</td></tr>
-	<tr><td>20</td><td>double d</td><td></td><td>double d</td><td>23</td></tr>
-	<tr><td>24</td><td>int * pa</td><td></td><td>int * pa</td><td>27</td></tr>
-	<tr><td>28</td><td>char * pc</td><td></td><td>int * pa</td><td>31</td></tr>
-	<tr><td>32</td><td>short e (2 Byte)</td><td></td><td>char * pc</td><td>35</td></tr>
-	<tr><td>36</td><td>留作对齐</td><td></td><td>char * pc</td><td>39</td></tr>
-	<tr><td>40</td><td></td><td></td><td>short e (2 Byte)</td><td>43</td></tr>
-	<tr><td>44</td><td></td><td></td><td>留作对齐</td><td>47</td></tr>
+	<tr><th>地址</th>	<th>32位 #pragma pack(4)</th> 	<th></th><th>32位</th> 		  	<th></th><th>64位</th>			<th>地址</th></tr>
+	<tr><td>0</td>   	<td>char a (1 Byte)</td>	<td></td><td>char a (1 Byte)</td> 	<td></td><td>char a (1 Byte)</td>	<td>3</td></tr>
+	<tr><td>4</td>   	<td>int b</td>			<td></td><td>int b</td>	  		<td></td><td>int b</td>			<td>7</td></tr>
+	<tr><td>8</td>   	<td>float c</td>		<td></td><td>float c</td>	  	<td></td><td>float c</td>		<td>11</td></tr>
+	<tr><td>12</td>	 	<td>double d</td>		<td></td><td>留作对齐</td>	  	<td></td><td>留作对齐</td>		<td>15</td></tr>
+	<tr><td>16</td>  	<td>double d</td>		<td></td><td>double d</td>	  	<td></td><td>double d</td>		<td>19</td></tr>
+	<tr><td>20</td>  	<td>int * pa</td>		<td></td><td>double d</td>	  	<td></td><td>double d</td>		<td>23</td></tr>
+	<tr><td>24</td>  	<td>char * pc</td>		<td></td><td>int * pa</td>	  	<td></td><td>int * pa</td>		<td>27</td></tr>
+	<tr><td>28</td>  	<td>short e (2 Byte)</td>	<td></td><td>char * pc</td>	  	<td></td><td>int * pa</td>		<td>31</td></tr>
+	<tr><td>32</td>  	<td></td>			<td></td><td>short e (2 Byte)</td>	<td></td><td>char * pc</td>		<td>35</td></tr>
+	<tr><td>36</td>  	<td></td>			<td></td><td>留作对齐</td>	  	<td></td><td>char * pc</td>		<td>39</td></tr>
+	<tr><td>40</td>  	<td></td>			<td></td><td></td>		  	<td></td><td>short e (2 Byte)</td>	<td>43</td></tr>
+	<tr><td>44</td>  	<td></td>			<td></td><td></td>		  	<td></td><td>留作对齐</td>		<td>47</td></tr>
 <table>
 
 8\. 用二分法查找一个长度为20的，排好序的线性表，查找不成功时，最多需要比较多少次（）**A. 5次**  
@@ -82,7 +82,7 @@ class Base2 : virtual public Base{
 public:
 	Base2(int i, int j = 0) : Base(j){cout << i;}
 	~Base2(){}
-}
+};
 class Derived : public Base2, public Base1{
 public:
 	Derived(int a, int b, int c, int d) : mem1(a), mem2(b), Base1(c), Base2(d), Base(a){cout << b;}
