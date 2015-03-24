@@ -94,39 +94,25 @@ C++标准规定，由**最派生类**直接初始化**虚基类**。因此，对
 1\. 给定若干个DNA序列（只包含ACGT四个字母），定义逆序度等于DNA中逆序对的总数，例如DNA序列AGCAGT，其逆序对有GC，GA，CA，所以该DNA序列的逆序度为3。请在横线上将DNA的逆序度的计算函数补充完整，要求时间复杂度O(n)。  
 答：考察以O(n)的时间复杂度算逆序数的算法：逐项读入每一个字母并计数，如果读入的是A，那么就与已经读入的CGT都构成逆序对；如果读入的是C，那么就与已经读入的GT都构成逆序对，以此类推。
 ```C++
-#include <stdio.h>
-#include <string.h>
-int calc_revseq(const char * pdna, unsigned int len){
-	int sum = 0;
-	int c[4] = {0};	//c[0]-c[3]分别代表字母ACGT计数器
-	for(int i = 0; i < len; i++){
-		switch(pdna[i]){
-		case 'A':
-			c[0]++;		//更新A的计数器
-			sum+=c[1]+c[2]+c[3];	//与已经读入的CGT都构成逆序对
-			break;
-		case 'C':
-			c[1]++;		//更新C的计数器
-			sum+=c[2]+c[3];	//与已经读入的GT都构成逆序对
-			break;
-		case 'G':
-			c[2]++;		//更新G的计数器
-			sum+=c[3];	//与已经读入的T构成逆序对
-			break;
-		case 'T':
-			c[3]++;		//更新T的计数器
-			break;		//T不会增加逆序数
-		default:
-			return -1;
-		};
-	}
-	return sum;
-}
-int main(int argc, char* argv[]){
-	char dna[] = "ACGGGCTACGTCAGTCAAGCTCTTAGCCCCGGTTAGAGCACGTA";
-	printf("%d\n",calc_revseq(dna,strlen(dna)));
-	return 0;
-}
+switch(pdna[i]){
+case 'A':
+	c[0]++;		//更新A的计数器
+	sum+=c[1]+c[2]+c[3];	//与已经读入的CGT都构成逆序对
+	break;
+case 'C':
+	c[1]++;		//更新C的计数器
+	sum+=c[2]+c[3];	//与已经读入的GT都构成逆序对
+	break;
+case 'G':
+	c[2]++;		//更新G的计数器
+	sum+=c[3];	//与已经读入的T构成逆序对
+	break;
+case 'T':
+	c[3]++;		//更新T的计数器
+	break;		//T不会增加逆序数
+default:
+	return -1;
+};	
 ```
 2\. 目前每年都有很多的儿童走失，我们的同事已经实现了一个函数库，输入两张照片，会反悔两个照片是否是同一个儿童，但这个函数需要耗费一定的CPU，请你基于这个函数，设计一个帮助父母寻找失踪儿童的系统：  
 1) 热心网友们可以同时上传一批流浪儿童的照片；  
